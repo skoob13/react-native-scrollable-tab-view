@@ -20,6 +20,7 @@ const DefaultTabBar = React.createClass({
     tabStyle: View.propTypes.style,
     renderTab: React.PropTypes.func,
     underlineStyle: View.propTypes.style,
+    buttonStyle: View.propTypes.style,
   },
 
   getDefaultProps() {
@@ -39,7 +40,7 @@ const DefaultTabBar = React.createClass({
     const fontWeight = isTabActive ? 'bold' : 'normal';
 
     return <Button
-      style={{flex: 1, }}
+      style={[{flex: 1, }, this.props.buttonStyle]}
       key={name}
       accessible={true}
       accessibilityLabel={name}
